@@ -34,8 +34,17 @@ def math_quiz():
 
         PROBLEM, ANSWER = function_C(n1, n2, o)
         print(f"\nQuestion: {PROBLEM}")
-        useranswer = input("Your answer: ") #takes user's answer
-        useranswer = int(useranswer) #converts to integer
+
+        while True:
+            try:
+                useranswer = int(input("Your answer:"))
+                break
+            except ValueError:
+                print("Please type your answer in integer")
+
+        # useranswer = input("Your answer: ") #takes user's answer
+        # useranswer = int(useranswer) #converts to integer
+        
 
         if useranswer == ANSWER:
             print("Correct! You earned a point.")
